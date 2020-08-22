@@ -9,16 +9,16 @@
         </tr>
     </head>
     <tbody>
-        @foreach($post as $posts)
+        @foreach($post as $posts)   
         <tr>
             <td>{{$posts->id}}</td>
             <td>{{$posts->title}}</td>
             <td>{{$posts->body}}</td>
             <td>
-                <button class="btn btn-primary">Editar</button>
+                <button  class="btn btn-primary">Editar</button>
             </td>
             <td>
-                <button class="btn btn-danger">Eliminar</button>
+                <button wire:click="destroy({{$posts->id}})"  class="btn btn-danger">Eliminar</button>
             </td>
         </tr>
         @endforeach
