@@ -34,4 +34,19 @@ class PostComponent extends Component
         ]);
 
     }
+
+    public function edit($id){
+        $post=Post::find($id);
+        $this->title=$post->title;
+        $this->body=$post->body;
+
+        $this->view='edit';
+    }
+
+    public function default($id){
+        $this->title='';
+        $this->body='';
+        $this->view="create";
+    }
 }
+
